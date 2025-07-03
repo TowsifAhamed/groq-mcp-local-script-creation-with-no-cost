@@ -8,10 +8,10 @@ async def main() -> None:
     url = os.getenv("MCP_URL", "http://localhost:4876/sse")
     model = os.getenv("MCP_MODEL", "meta-llama/llama-4-maverick-17b-128e-instruct")
     prompt = (
-        "Create a simple snake game that runs in a text-based grid. "
-        "Use the `write_file` tool to save it as `snake.py` in the game_lab "
+        "Create a simple tictactoe game that runs automatically. "
+        "Use the `write_file` tool to save it as `tictactoe.py` in the game_lab "
         "directory (the directory is already there). Then execute it with the `run_cmd` tool so the game "
-        "plays automatically for 10 seconds. try to get to the apple calculating a shortest path, eat the apple and grow the snake."
+        "plays automatically for both sides as a simulation."
     )
     messages = [{"role": "user", "content": prompt}]
     async with ClientSessionGroup() as group:

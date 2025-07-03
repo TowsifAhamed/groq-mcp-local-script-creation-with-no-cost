@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 import subprocess, os, json, textwrap
 from groq import AsyncGroq
 
-SANDBOX = os.path.abspath("./game_lab")
+SANDBOX = os.path.abspath(os.path.join(os.path.dirname(__file__), "game_lab"))
 
 # FastMCP application instance used to register tools
 app = FastMCP()
@@ -83,7 +83,7 @@ def run_cmd(arg: Cmd) -> str:
 
 
 @app.tool(name="compound_tool", description="Agent that uses Groq LLM to call other tools")
-async def compound_tool(messages: list[dict], model: str = "mixtral-8x7b-32768") -> list[str]:
+async def compound_tool(messages: list[dict], model: str = "meta-llama/llama-4-maverick-17b-128e-instruct") -> list[str]:
     """Use Groq's chat completion API with function calls to invoke tools."""
     client = AsyncGroq()
 
