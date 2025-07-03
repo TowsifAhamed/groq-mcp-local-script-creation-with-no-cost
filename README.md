@@ -80,6 +80,8 @@ find the files in that directory and execute them again manually:
 python game_lab/snake.py       # or game_lab/tictactoe.py
 ```
 
+![snake_demo](https://github.com/user-attachments/assets/f50f8f62-2ec2-45f8-8d9e-6ff635467c69)
+
 Make sure to keep the server terminal open while running the clients so the
 script creation and execution can complete.
 
